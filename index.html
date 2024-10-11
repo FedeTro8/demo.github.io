@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo Chatbot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #fff;
+            margin: 0;
+        }
+
+        nav.container-fluid {
+            background-color: #000;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav.container-fluid strong {
+            font-size: 1.5rem;
+        }
+
+        main.container {
+            background-color: #fff;
+            height: 100vh; /* Occupare l'intera altezza della pagina */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="container-fluid">
+    <strong>Demo Chatbot</strong>
+</nav>
+
+<main class="container">
+    <!-- Contenuto vuoto per mantenere l'area principale bianca -->
+</main>
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '66e43e776e53ccd379c5f006' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html>
