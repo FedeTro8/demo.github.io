@@ -1,167 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Demo Chatbot</title>
-<style>
-  .hidden{display:none;}
-  .invisible{visibility:hidden;position:absolute;top:-9999px;}
-  .red{color:red;}
-  .large-padding{padding:100px;}
-  .offscreen{position:absolute;left:-9999px;top:-9999px;}
-  .opaque{opacity:0.5;}
-</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-<meta name="author" content="MysteryAuthor">
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Descrizione inutile e irrilevante.">
-<meta name="keywords" content="confusione, caos, incomprensibile, inutile">
+<style>
+body {background-color: #fff;margin: 0;}
+nav.container-fluid {background-color: #000;color: #fff;padding: 1rem;text-align: center;}
+nav.container-fluid strong {font-size: 1.5rem;}
+main.container {background-color: #fff;height: 100vh;display: flex;justify-content: center;align-items: center;}
+.hidden-element, .dummy-class, .extra-dummy {display: none;}
+.unused-class, .another-dummy {opacity: 0;color: green;}
+.invisible-class {visibility: hidden;width: 0;height: 0;overflow: hidden;}
+.redundant-element {font-size: 10px;width: 100%;height: auto;z-index: -999;}
+.unimportant {position: absolute;top: -9999px;left: -9999px;}
+#dummy-id {color: pink !important;margin: -1px;}
+.random-element1, .random-element2, .random-element3 {position: fixed !important;top: 0 !important;}
+.extra-hidden, .superfluous-div {opacity: 0.01;}
+.fake-container {position: absolute;bottom: -1000px;}
+</style>
 </head>
 <body>
-
-<div class="invisible"><p>Contenuto Nascosto</p></div>
-<div class="large-padding offscreen"><p>Altro Contenuto Fuori Schermo</p></div>
-<form id="invisible-form" class="invisible">
-  <input type="text" name="hidden-field" value="hidden"><button type="submit">Submit</button>
-</form>
-
+<nav class="container-fluid">
+<strong>Demo Chatbot</strong>
+<div class="hidden-element">Test nascosto 1</div>
+<div class="extra-dummy">Test nascosto 2</div>
+<span class="dummy-class">Elemento inutile</span>
+<span class="unused-class">Test nascosto 3</span>
+<div class="another-dummy invisible-class">Test invisibile</div>
+<div class="redundant-element">Contenuto superfluo</div>
+<div class="unimportant">Più contenuto inutile</div>
+</nav>
+<main class="container">
+<div id="dummy-id">Elemento fuori schermo</div>
+<span class="random-element1">Invisibile 1</span>
+<span class="random-element2">Invisibile 2</span>
+<span class="random-element3">Invisibile 3</span>
+</main>
 <script type="text/javascript">
-  (function(d,t){
-    var e=d.createElement(t),f=d.getElementsByTagName(t)[0],r=Math.random().toString(36).substr(2,8),
-    dummyVar="hidden"+Math.random().toString(36).substr(2,8),count=0,randomDiv=d.createElement('div');
-    
-    for(var i=0;i<100;i++){
-      var uDiv=d.createElement("div"),rnd=Math.floor(Math.random()*10)+1,uStr="useless"+rnd+Math.random().toString(36).substr(2,8);
-      uDiv.className=uStr;uDiv.textContent="Confuso "+uStr;d.body.appendChild(uDiv);
-    }
-    
-    var src1=["https://cdn.voiceflow.com/widget/"],src2=["bundle.mjs"];
-    e.onload=function(){
-      var p="66e43e776e53ccd379c5f006",url=["https","://","general-runtime.voiceflow.com"].join(""),v="production";
-      function loadScript(){
-        var loader=window.voiceflow.chat.load;loader({verify:{projectID:p},url:url,versionID:v});
-      }
-      setTimeout(loadScript,500+Math.random()*1000);
-    };
-    e.src=src1[0]+src2[0];e.type="text/javascript";
-    
-    setTimeout(function(){f.parentNode.insertBefore(e,f);},Math.random()*1000);
-    
-    var tempArray=Array.from({length:10},(_,i)=>i+Math.random()*10);
-    tempArray.forEach(function(val){
-      var junkDiv=d.createElement('div');junkDiv.className="useless";junkDiv.textContent="Waste "+val;d.body.appendChild(junkDiv);
-    });
-    
-    function extraLayer(x,y){
-      return Array.from({length:10},(_,i)=>i*y+Math.random()*x);
-    }
-    
-    setInterval(function(){
-      var fakeDiv=d.createElement("div");fakeDiv.className="red";
-      fakeDiv.textContent="Extra Element";d.body.appendChild(fakeDiv);
-    },3000);
-    
-    var unusedArray=["alpha","beta","gamma"];
-    function randomFunc(){return unusedArray[Math.floor(Math.random()*unusedArray.length)];}
-    
-  })(document,'script');
+(function(d, t) {
+var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+v.onload = function() { window.voiceflow.chat.load({ verify: { projectID: '66e43e776e53ccd379c5f006' }, url: 'https://general-runtime.voiceflow.com', versionID: 'production' }); };
+v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+})(document, 'script');
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
-        if (num % j === 0) {
-          isPrime = false;
-          break;
-        }
-      }
-      if (isPrime) primeNumbers.push(num);
-    }
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var bogus=Math.random(),dummyArr=Array.from({length:5},(_,i)=>i*Math.random());
-    dummyArr.forEach((val)=>{
-      var elem=document.createElement("div");
-      elem.className="offscreen";elem.textContent="Elemento Off-Screen "+val;document.body.appendChild(elem);
-    });
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var t=["A","B","C"],extraArray=t.map(x=>x+Math.random().toString(36).substr(2,6)),
-    calc=Math.random()*100,fillDiv=document.createElement("div");
-    fillDiv.className="opaque";fillDiv.textContent="Testo Opaco "+calc;document.body.appendChild(fillDiv);
-  })();
-</script>
-
+<div class="extra-hidden">Elemento 1</div>
+<div class="superfluous-div">Elemento 2</div>
+<span class="fake-container">Elemento 3</span>
+<div class="extra-hidden">Elemento 4</div>
+<div class="superfluous-div">Elemento 5</div>
+<span class="fake-container">Elemento 6</span>
+<div class="extra-hidden">Elemento 7</div>
+<div class="superfluous-div">Elemento 8</div>
+<span class="fake-container">Elemento 9</span>
+<div class="extra-hidden">Elemento 10</div>
+<div class="superfluous-div">Elemento 11</div>
 </body>
 </html>
 
