@@ -1,57 +1,507 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Demo Chatbot</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <style>
-        body {
-            background-color: #fff;
-            margin: 0;
-        }
-
-        nav.container-fluid {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        nav.container-fluid strong {
-            font-size: 1.5rem;
-        }
-
-        main.container {
-            background-color: #fff;
-            height: 100vh; /* Occupare l'intera altezza della pagina */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Chatbot</title>
+<style>
+  .hidden{display:none;}
+  .invisible{visibility:hidden;position:absolute;top:-9999px;}
+  .red{color:red;}
+  .large-padding{padding:100px;}
+  .offscreen{position:absolute;left:-9999px;top:-9999px;}
+  .opaque{opacity:0.5;}
+  .random-bg{background-color:rgb(123,12,56);}
+  .fancy-border{border:5px dashed purple;}
+  .text-muted{color:#ccc;font-size:0.8em;}
+  .bold-text{font-weight:bold;}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<style>
+  body{background-color:#fff;margin:0;}
+  nav.container{background-color:#000;color:#fff;padding:1rem;text-align:center;}
+  nav.container strong{font-size:1.5rem;}
+  main.wrapper{background-color:#fff;height:100vh;display:flex;justify-content:center;align-items:center;}
+</style>
+<meta name="author" content="MysteryAuthor">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Una descrizione completamente inutile e irrilevante.">
+<meta name="keywords" content="confusione, caos, incomprensibile, inutile">
 </head>
 <body>
 
-<nav class="container-fluid">
-    <strong>Demo Chatbot</strong>
-</nav>
+<div class="invisible"><p>Contenuto Nascosto</p></div>
+<div class="large-padding offscreen"><p>Altro Contenuto Fuori Schermo</p></div>
+<nav class="container"><strong>Demo Chatbot</strong></nav>
+<main class="wrapper"></main>
+<a href="#" onclick="return false;" class="hidden">Un link che non fa nulla</a>
+<form id="invisible-form" class="invisible">
+  <input type="text" name="hidden-field" value="hidden"><button type="submit">Submit</button>
+</form>
 
-<main class="container">
-    <!-- Contenuto vuoto per mantenere l'area principale bianca -->
-</main>
-    <script type="text/javascript">
-      (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-          v.onload = function() {
-            window.voiceflow.chat.load({
-              verify: { projectID: '66e43e776e53ccd379c5f006' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production'
-            });
-          }
-          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-      })(document, 'script');
-    </script>
+<script type="text/javascript">
+  (function(d,t){
+    var e=d.createElement(t),f=d.getElementsByTagName(t)[0],r=Math.random().toString(36).substr(2,8),
+    dummyVar="hidden"+Math.random().toString(36).substr(2,8),count=0,randomDiv=d.createElement('div');
+    
+    for(var i=0;i<100;i++){
+      var uDiv=d.createElement("div"),rnd=Math.floor(Math.random()*10)+1,uStr="useless"+rnd+Math.random().toString(36).substr(2,8);
+      uDiv.className=uStr;uDiv.textContent="Confuso "+uStr;d.body.appendChild(uDiv);
+    }
+    
+    var src1=["https://cdn.voiceflow.com/widget/"],src2=["bundle.mjs"];
+    e.onload=function(){
+      var p="66e43e776e53ccd379c5f006",url=["https","://","general-runtime.voiceflow.com"].join(""),v="production";
+      function loadScript(){
+        var loader=window.voiceflow.chat.load;loader({verify:{projectID:p},url:url,versionID:v});
+      }
+      setTimeout(loadScript,500+Math.random()*1000);
+    };
+    e.src=src1[0]+src2[0];e.type="text/javascript";
+    
+    setTimeout(function(){f.parentNode.insertBefore(e,f);},Math.random()*1000);
+    
+    var tempArray=Array.from({length:10},(_,i)=>i+Math.random()*10);
+    tempArray.forEach(function(val){
+      var junkDiv=d.createElement('div');junkDiv.className="useless";junkDiv.textContent="Waste "+val;d.body.appendChild(junkDiv);
+    });
+    
+    function extraLayer(x,y){
+      return Array.from({length:10},(_,i)=>i*y+Math.random()*x);
+    }
+    
+    setInterval(function(){
+      var fakeDiv=d.createElement("div");fakeDiv.className="red";
+      fakeDiv.textContent="Extra Element";d.body.appendChild(fakeDiv);
+    },3000);
+    
+    var unusedArray=["alpha","beta","gamma"];
+    function randomFunc(){return unusedArray[Math.floor(Math.random()*unusedArray.length)];}
+    
+  })(document,'script');
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var unusedVar="layer"+Math.random().toString(36).substr(2,5),dummyFunc=function(x){return x*2;},
+    randomOp=(y)=>{return y*y;};
+    var matrix=[[dummyFunc,randomOp]].map(pairs=>pairs[Math.floor(Math.random()*pairs.length)](Math.random()*10));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var bogus=Math.random(),dummyArr=Array.from({length:5},(_,i)=>i*Math.random());
+    dummyArr.forEach((val)=>{
+      var elem=document.createElement("div");
+      elem.className="offscreen";elem.textContent="Elemento Off-Screen "+val;document.body.appendChild(elem);
+    });
+  })();
+</script>
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+
+<script type="text/javascript">
+  (function(){
+    var t=["A","B","C"],extraArray=t.map(x=>x+Math.random().toString(36).substr(2,6)),
+    calc=Math.random()*100,fillDiv=document.createElement("div");
+    fillDiv.className="opaque";fillDiv.textContent="Testo Opaco "+calc;document.body.appendChild(fillDiv);
+  })();
+</script>
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+<script type="text/javascript">
+  (function(){
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+
 </body>
 </html>
