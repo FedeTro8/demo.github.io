@@ -11,30 +11,17 @@
   .large-padding{padding:100px;}
   .offscreen{position:absolute;left:-9999px;top:-9999px;}
   .opaque{opacity:0.5;}
-  .random-bg{background-color:rgb(123,12,56);}
-  .fancy-border{border:5px dashed purple;}
-  .text-muted{color:#ccc;font-size:0.8em;}
-  .bold-text{font-weight:bold;}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-<style>
-  body{background-color:#fff;margin:0;}
-  nav.container{background-color:#000;color:#fff;padding:1rem;text-align:center;}
-  nav.container strong{font-size:1.5rem;}
-  main.wrapper{background-color:#fff;height:100vh;display:flex;justify-content:center;align-items:center;}
-</style>
 <meta name="author" content="MysteryAuthor">
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Una descrizione completamente inutile e irrilevante.">
+<meta name="description" content="Descrizione inutile e irrilevante.">
 <meta name="keywords" content="confusione, caos, incomprensibile, inutile">
 </head>
 <body>
 
 <div class="invisible"><p>Contenuto Nascosto</p></div>
 <div class="large-padding offscreen"><p>Altro Contenuto Fuori Schermo</p></div>
-<nav class="container"><strong>Demo Chatbot</strong></nav>
-<main class="wrapper"></main>
-<a href="#" onclick="return false;" class="hidden">Un link che non fa nulla</a>
 <form id="invisible-form" class="invisible">
   <input type="text" name="hidden-field" value="hidden"><button type="submit">Submit</button>
 </form>
@@ -83,9 +70,77 @@
 
 <script type="text/javascript">
   (function(){
-    var unusedVar="layer"+Math.random().toString(36).substr(2,5),dummyFunc=function(x){return x*2;},
-    randomOp=(y)=>{return y*y;};
-    var matrix=[[dummyFunc,randomOp]].map(pairs=>pairs[Math.floor(Math.random()*pairs.length)](Math.random()*10));
+    var uselessFunction1 = function(a) {
+      var result = 0;
+      for (var i = 0; i < 100; i++) {
+        result += (i * a) % 7;
+      }
+      return result;
+    };
+    uselessFunction1(Math.random() * 10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function recursiveFibonacci(n) {
+      if (n <= 1) return n;
+      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+    recursiveFibonacci(10);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
+    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
+    var concatenateStrings = shuffledArray.join('');
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var meaninglessMap = new Map();
+    for (var i = 0; i < 100; i++) {
+      meaninglessMap.set(i, Math.random() * i);
+    }
+    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    function delayedLoop() {
+      for (var i = 0; i < 1000; i++) {
+        setTimeout(() => {
+          var temp = Math.sqrt(i * i);
+        }, Math.random() * 1000);
+      }
+    }
+    delayedLoop();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
+  })();
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var primeNumbers = [];
+    for (var num = 2; num < 50; num++) {
+      var isPrime = true;
+      for (var j = 2; j < num; j++) {
+        if (num % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) primeNumbers.push(num);
+    }
   })();
 </script>
 
@@ -98,138 +153,6 @@
     });
   })();
 </script>
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
 
 <script type="text/javascript">
   (function(){
@@ -238,270 +161,7 @@
     fillDiv.className="opaque";fillDiv.textContent="Testo Opaco "+calc;document.body.appendChild(fillDiv);
   })();
 </script>
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
-<script type="text/javascript">
-  (function(){
-    var uselessFunction1 = function(a) {
-      var result = 0;
-      for (var i = 0; i < 100; i++) {
-        result += (i * a) % 7;
-      }
-      return result;
-    };
-    uselessFunction1(Math.random() * 10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function recursiveFibonacci(n) {
-      if (n <= 1) return n;
-      return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
-    }
-    recursiveFibonacci(10);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var noiseArray = Array.from({length: 50}, (_, i) => String.fromCharCode(65 + (i % 26)));
-    var shuffledArray = noiseArray.sort(() => Math.random() - 0.5);
-    var concatenateStrings = shuffledArray.join('');
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var meaninglessMap = new Map();
-    for (var i = 0; i < 100; i++) {
-      meaninglessMap.set(i, Math.random() * i);
-    }
-    var randomKey = meaninglessMap.get(Math.floor(Math.random() * 100));
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    function delayedLoop() {
-      for (var i = 0; i < 1000; i++) {
-        setTimeout(() => {
-          var temp = Math.sqrt(i * i);
-        }, Math.random() * 1000);
-      }
-    }
-    delayedLoop();
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var piApproximation = Array.from({length: 100}, (_, i) => 4 * Math.pow(-1, i) / (2 * i + 1)).reduce((a, b) => a + b, 0);
-  })();
-</script>
-
-<script type="text/javascript">
-  (function(){
-    var primeNumbers = [];
-    for (var num = 2; num < 50; num++) {
-      var isPrime = true;
-      for (var j = 2; j < num; j++) {
 
 </body>
 </html>
+
